@@ -1,0 +1,26 @@
+
+name: Tests Node.js
+
+on:
+  push:
+    branches: [main, development, feature-code]
+  pull_request:
+    branches: [main, development, feature-code]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Ejecutar pruebas
+        run: |
+          npm install
+          npm test
