@@ -1,0 +1,9 @@
+{
+  "name": "pf03-a1",
+  "version": "1.0.0",
+  "description": "Actividad 1 de PF03: TDD con Node.js",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  }
+}
