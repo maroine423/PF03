@@ -1,5 +1,5 @@
 export function fibonacci(n) {
-    if (n < 0) {
+    if (!Number.isInteger(n) || n < 0) {
         throw new RangeError('solo números enteros ≥ 0');
     }
 
