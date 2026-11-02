@@ -3,17 +3,9 @@ export function esPinValido(pin) {
         return false;
     }
 
-    if (pin.length !== 4 && pin.length !== 6) {
-        return false;
-    }
+    const longitudValida = pin.length === 4 || pin.length === 6;
+    const soloDigitos = /^[0-9]+$/.test(pin);
+    const digitosDistintos = new Set(pin).size > 1;
 
-    if (!/^[0-9]+$/.test(pin)) {
-        return false;
-    }
-
-    if (new Set(pin).size === 1) {
-        return false;
-    }
-
-    return true;
+    return longitudValida && soloDigitos && digitosDistintos;
 }
